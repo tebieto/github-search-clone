@@ -9,6 +9,8 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from '@apollo/client';
+import { createTheme, ThemeProvider } from '@material-ui/core';
+import colors from './utils/colors';
 
 const link = createHttpLink({
   uri: '/graphql',
@@ -19,11 +21,26 @@ const client = new ApolloClient({
   link,
 });
 
+const customTheme = createTheme({
+  palette: {
+    primary: {
+      main: colors.primaryButtonColor,
+    },
+  },
+  typography: {
+    button: {
+      textTransform: 'none',
+    },
+  },
+});
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ApolloProvider client={client}>
-        <App />
+        <ThemeProvider theme={customTheme}>
+          <App />
+        </ThemeProvider>
       </ApolloProvider>
     </BrowserRouter>
   </React.StrictMode>,

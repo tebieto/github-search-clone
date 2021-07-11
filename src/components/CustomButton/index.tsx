@@ -1,7 +1,14 @@
 import React from 'react';
+import { CustomButtonContainer } from './styles';
 
-const CustomButton = (): JSX.Element => {
-  return <div></div>;
+interface CustomButtonProps {
+  children: string;
+  onClick: { (): void };
+}
+const CustomButton = (props: CustomButtonProps): JSX.Element => {
+  return (
+    <CustomButtonContainer {...props}>{props.children}</CustomButtonContainer>
+  );
 };
 
 export default CustomButton;
