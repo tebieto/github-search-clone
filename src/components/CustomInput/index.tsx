@@ -6,6 +6,7 @@ interface CustomInputProps {
   onChange: { (e: React.ChangeEvent<HTMLInputElement>): void };
   placeholder?: string;
   value: string;
+  size?: 'small' | 'medium' | undefined;
 }
 
 const CustomInput = (props: CustomInputProps): JSX.Element => {

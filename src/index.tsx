@@ -24,7 +24,10 @@ const client = new ApolloClient({
 const customTheme = createTheme({
   palette: {
     primary: {
-      main: colors.primaryButtonColor,
+      main: colors.primaryColor,
+    },
+    secondary: {
+      main: colors.secondaryColor,
     },
   },
   typography: {
