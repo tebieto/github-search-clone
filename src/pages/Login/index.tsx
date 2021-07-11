@@ -5,7 +5,10 @@ import { LoginContainer } from './styles';
 const Login = (): JSX.Element => {
   return (
     <LoginContainer>
-      <CustomButton onClick={() => alert('clicked')}>
+      <CustomButton
+        aria-label="Login to Github Button"
+        onClick={() => alert('clicked')}
+      >
         Login to Github
       </CustomButton>
     </LoginContainer>

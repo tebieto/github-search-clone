@@ -13,4 +13,8 @@ export const HeaderProfileSectionContainer = styled.div`
   .auth-user-name {
     margin: 0 10px;
   }
+
+  .icon {
+    cursor: pointer;
+  }
 `;
