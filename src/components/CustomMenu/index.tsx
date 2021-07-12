@@ -1,6 +1,7 @@
 import React from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Menu, MenuItem } from '@material-ui/core';
+import colors from '../../utils/colors';
 
 const CustomMenu = (): JSX.Element => {
   const target = document.getElementById('null');
@@ -33,7 +34,10 @@ const CustomMenu = (): JSX.Element => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} style={{ color: 'red' }}>
+        <MenuItem
+          onClick={handleClose}
+          style={{ color: colors.logoutButtonColor }}
+        >
           Logout
         </MenuItem>
       </Menu>
