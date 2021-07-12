@@ -3,8 +3,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Menu, MenuItem } from '@material-ui/core';
 import colors from '../../utils/colors';
 import { ACCESS_TOKEN_KEY } from '../../utils/constants';
-import { useHistory } from 'react-router';
-
 const CustomMenu = (): JSX.Element => {
   const target = document.getElementById('null');
   const [anchorEl, setAnchorEl] = React.useState(target);

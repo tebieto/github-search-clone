@@ -1,7 +1,17 @@
+import { useQuery } from '@apollo/client';
 import React from 'react';
+import { SEARCH_USER } from '../../graphql/mutation';
 import { UserResultListsContainer } from './styles';
 
-const UserResultLists = (): JSX.Element => {
+interface UserResultListsProps {
+  query: string;
+}
+const UserResultLists = ({ query }: UserResultListsProps): JSX.Element => {
+  const { data, error, loading } = useQuery(SEARCH_USER, {
+    variables: { query },
+  });
+
+  console.log({ data, error, loading });
   return (
     <UserResultListsContainer>
       <h2>543 Users</h2>

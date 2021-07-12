@@ -1,4 +1,6 @@
+import { useQuery } from '@apollo/client';
 import React from 'react';
+import { useHistory } from 'react-router';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 import HeaderProfileSection from '../../components/HeaderProfileSection';
@@ -6,11 +8,14 @@ import Logo from '../../components/Logo';
 import { SearchContainer } from './styles';
 
 const Search = (): JSX.Element => {
-  const [inputValue, setInputValue] = React.useState('');
+  const [inputValue, setInputValue] = React.useState('react');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
+
+  const history = useHistory();
+
   return (
     <SearchContainer>
       <div className="search-header">
@@ -28,7 +33,7 @@ const Search = (): JSX.Element => {
           </div>
           <CustomButton
             aria-label="Search Github Button"
-            onClick={() => alert('clicked')}
+            onClick={() => history.push(`/search/results/?q=${inputValue}`)}
           >
             Search Github
           </CustomButton>
