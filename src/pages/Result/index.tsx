@@ -13,11 +13,13 @@ const Result = (): JSX.Element => {
       <Header />
       <div className="search-result-body">
         <ResultTab {...resultTabProps} />
-        {active === 'repository' ? (
-          <RepositoryResultLists />
-        ) : (
-          <UserResultLists />
-        )}
+        <div className="lists">
+          {active === 'repository' ? (
+            <RepositoryResultLists />
+          ) : (
+            <UserResultLists />
+          )}
+        </div>
       </div>
     </ResultContainer>
   );

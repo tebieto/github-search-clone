@@ -4,9 +4,9 @@ import colors from '../../utils/colors';
 export const ResultTabContainer = styled.div`
   .nav {
     background-color: ${colors.secondaryColor};
-    padding: 20px;
     display: inline-block;
     padding: 30px;
+    margin: 0;
     border-radius: 5px;
     list-style: none;
 
