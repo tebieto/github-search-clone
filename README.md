@@ -20,3 +20,5 @@ search Github repositories and users, using their search parameters.
 - No tests written
 - Incomplete pagination logic
 - UI could be better
+- More accessibility
+- Stricter code patterns
