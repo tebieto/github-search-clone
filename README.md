@@ -21,4 +21,4 @@ search Github repositories and users, using their search parameters.
 - Incomplete pagination logic
 - UI could be better
 - More accessibility
-- Stricter code patterns
+- Stricter code style
