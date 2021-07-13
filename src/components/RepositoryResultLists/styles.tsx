@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import colors from '../../utils/colors';
 
 export const RepositoryResultListsContainer = styled.div`
+  width: 700px;
   .repository-result-list {
     background-color: ${colors.secondaryColor};
     display: inline-block;
-    width: 700px;
+    width: 100%;
     padding: 20px;
     border-radius: 5px;
     .title {
@@ -23,5 +24,6 @@ export const RepositoryResultListsContainer = styled.div`
       color: ${colors.tertiaryTextColor};
       font-size: 12px;
     }
+    margin-bottom: 20px;
   }
 `;

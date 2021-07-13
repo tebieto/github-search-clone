@@ -1,27 +1,32 @@
-import { useQuery } from '@apollo/client';
 import React from 'react';
-import { SEARCH_USER } from '../../graphql/mutation';
+import commaNumber from 'comma-number';
 import { UserResultListsContainer } from './styles';
-
-interface UserResultListsProps {
-  query: string;
+interface UserNode {
+  id: string;
+  name: string;
+  bio: string;
+  email: string;
 }
-const UserResultLists = ({ query }: UserResultListsProps): JSX.Element => {
-  const { data, error, loading } = useQuery(SEARCH_USER, {
-    variables: { query },
-  });
-
-  console.log({ data, error, loading });
+interface UserResultListsProps {
+  user: UserNode[];
+}
+const UserResultLists = ({ user }: UserResultListsProps): JSX.Element => {
   return (
     <UserResultListsContainer>
-      <h2>543 Users</h2>
-      <div className="user-result-list">
-        <div className="title">
-          <h4 className="main-title">John Doe</h4>
-          <div className="sub-title">Lorem Ipsum Dollor</div>
-        </div>
-        <div className="description">Some longer text to fill some space</div>
-      </div>
+      <h2>{commaNumber(user.length)} User Results</h2>
+      {user
+        .filter(({ id }: UserNode) => id)
+        .map((user: UserNode, key: number) => {
+          return (
+            <div key={key} className="user-result-list">
+              <div className="title">
+                <h4 className="main-title">{user.name || 'N/A'}</h4>
+                <div className="sub-title">{user.email || 'N/A'}</div>
+              </div>
+              <div className="description">{user.bio || 'N/A'}</div>
+            </div>
+          );
+        })}
     </UserResultListsContainer>
   );
 };

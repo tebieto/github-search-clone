@@ -7,33 +7,52 @@ import { ResultContainer } from './styles';
 
 import queryString from 'query-string';
 import { useHistory } from 'react-router';
+import { useQuery } from '@apollo/client';
+import { SEARCH_REPOSITORY, SEARCH_USER } from '../../graphql/mutation';
+import Loader from '../../components/Loader';
 
 const Result = (): JSX.Element => {
   const [active, setActive] = React.useState('repository');
   const [query, setQuery] = React.useState('');
   const history = useHistory();
-
-  const resultTabProps = { active, setActive };
-
+  const params = queryString.parse(history.location.search);
   React.useEffect(() => {
-    const params = queryString.parse(history.location.search);
     const query = params['q'] || '';
     setQuery(query as string);
-  }, []);
+  }, [params]);
+
+  const { data: userData, loading: userLoading } = useQuery(SEARCH_USER, {
+    variables: { query },
+  });
+
+  const { data: repositoryData, loading: repositoryLoading } = useQuery(
+    SEARCH_REPOSITORY,
+    {
+      variables: { query },
+    },
+  );
+
+  const repositories = repositoryData && repositoryData.search.nodes;
+  const users = userData && userData.search.nodes;
+  const resultTabProps = { active, setActive, repositories, users };
 
   return (
     <ResultContainer>
-      <Header />
-      <div className="search-result-body">
-        <ResultTab {...resultTabProps} />
-        <div className="lists">
-          {active === 'repository' ? (
-            <RepositoryResultLists query={query} />
-          ) : (
-            <UserResultLists query={query} />
-          )}
+      <Header query={query} />
+      {userLoading || repositoryLoading ? (
+        <Loader />
+      ) : (
+        <div className="search-result-body">
+          <ResultTab {...resultTabProps} />
+          <div className="lists">
+            {active === 'repository'
+              ? repositoryData && (
+                  <RepositoryResultLists repository={repositories} />
+                )
+              : userData && <UserResultLists user={users} />}
+          </div>
         </div>
-      </div>
+      )}
     </ResultContainer>
   );
 };

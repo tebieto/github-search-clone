@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
+import { queryLink } from '../../utils';
 import CustomInput from '../CustomInput';
 import HeaderProfileSection from '../HeaderProfileSection';
 import Logo from '../Logo';
 import { HeaderContainer, ToolbarContainer } from './styles';
 
-const Header = (): JSX.Element => {
+const Header = ({ query }: { query: string }): JSX.Element => {
   const [inputValue, setInputValue] = useState('');
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
+
+  const history = useHistory();
+
+  const handleChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setInputValue(e.target.value);
+    },
+    [],
+  );
+  const handleKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      e.key === 'Enter' && history.push(queryLink(inputValue));
+    },
+    [inputValue],
+  );
+
+  useEffect(() => {
+    setInputValue(query);
+  }, [query]);
   return (
     <HeaderContainer color="secondary" elevation={1} position="static">
       <ToolbarContainer>
@@ -19,6 +37,7 @@ const Header = (): JSX.Element => {
             placeholder="Search"
             onChange={handleChange}
             size="small"
+            onKeyDown={handleKeyDown}
           />
         </div>
         <HeaderProfileSection />

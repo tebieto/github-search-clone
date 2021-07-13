@@ -7,10 +7,12 @@ export const HeaderContainer = styled(AppBar)`
   .search-input-container {
     width: 400px;
   }
+  z-index: 1 !important;
 `;
 
 export const ToolbarContainer = styled(Toolbar)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
 `;

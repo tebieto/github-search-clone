@@ -1,10 +1,10 @@
-import { useQuery } from '@apollo/client';
 import React from 'react';
 import { useHistory } from 'react-router';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 import HeaderProfileSection from '../../components/HeaderProfileSection';
 import Logo from '../../components/Logo';
+import { queryLink } from '../../utils';
 import { SearchContainer } from './styles';
 
 const Search = (): JSX.Element => {
@@ -15,6 +15,13 @@ const Search = (): JSX.Element => {
   };
 
   const history = useHistory();
+
+  const handleKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      e.key === 'Enter' && history.push(queryLink(inputValue));
+    },
+    [inputValue],
+  );
 
   return (
     <SearchContainer>
@@ -29,11 +36,12 @@ const Search = (): JSX.Element => {
               aria-label="Search Input"
               value={inputValue}
               onChange={handleChange}
+              onKeyDown={handleKeyDown}
             />
           </div>
           <CustomButton
             aria-label="Search Github Button"
-            onClick={() => history.push(`/search/results/?q=${inputValue}`)}
+            onClick={() => history.push(queryLink(inputValue))}
           >
             Search Github
           </CustomButton>

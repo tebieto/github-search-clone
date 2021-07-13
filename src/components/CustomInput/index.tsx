@@ -7,6 +7,7 @@ interface CustomInputProps {
   placeholder?: string;
   value: string;
   size?: 'small' | 'medium' | undefined;
+  onKeyDown?: { (e: React.KeyboardEvent<HTMLDivElement>): void };
 }
 
 const CustomInput = (props: CustomInputProps): JSX.Element => {

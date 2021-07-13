@@ -5,10 +5,11 @@ export const ResultContainer = styled.div`
   min-height: 100vh;
   background-color: ${colors.resultPageBackgroundColor};
   .search-result-body {
-    margin: 50px;
     display: flex;
     justify-content: center;
+    margin: 50px 0;
     .lists {
+      flex: 0;
       margin-left: 20px;
       h2 {
         margin: 0;
