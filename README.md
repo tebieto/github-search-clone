@@ -12,6 +12,9 @@ search Github repositories and users, using their search parameters.
 
 ## Run Locally
 
+- yarn install
+- yarn start
+
 - install npm, node and postgres locally
 - mkdir /server/src/uploads/csv
 - touch /server/.env
