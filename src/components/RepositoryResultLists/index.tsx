@@ -4,6 +4,7 @@ import { RepositoryResultListsContainer } from './styles';
 import shortenNumber from 'short-number';
 import TimeAgo from 'timeago-react';
 import commaNumber from 'comma-number';
+import Pagination from '../Pagination';
 
 interface RepositoryNode {
   id: string;
@@ -26,11 +27,20 @@ interface RepositoryResultListsProps {
 const RepositoryResultLists = ({
   repository,
 }: RepositoryResultListsProps): JSX.Element => {
+  const [currentPage, setCurrentPage] = React.useState(0);
+
+  const handleSetCurrentPage = React.useCallback((page: number) => {
+    setCurrentPage(page);
+  }, []);
+
+  const max = 10;
+
   return (
     <RepositoryResultListsContainer>
       <h2>{commaNumber(repository.length)} Repository Results</h2>
       {repository &&
         repository
+          .slice(currentPage * max, currentPage * max + max)
           .filter(({ id }: RepositoryNode) => id)
           .map((repository: RepositoryNode, key: number) => {
             const language = repository.languages.nodes[0];
@@ -50,6 +60,12 @@ const RepositoryResultLists = ({
               </div>
             );
           })}
+      <Pagination
+        itemsLength={repository.length}
+        currentPage={currentPage}
+        setCurrentPage={handleSetCurrentPage}
+        max={max}
+      />
     </RepositoryResultListsContainer>
   );
 };

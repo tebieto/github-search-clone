@@ -7,7 +7,7 @@ export const ResultContainer = styled.div`
   .search-result-body {
     display: flex;
     justify-content: center;
-    margin: 50px 0;
+    margin-top: 50px;
     .lists {
       flex: 0;
       margin-left: 20px;

@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import colors from '../../utils/colors';
 
 export const UserResultListsContainer = styled.div`
-  width: 700px;
   .user-result-list {
     background-color: ${colors.secondaryColor};
     display: inline-block;
-    width: 100%;
+    width: 700px;
     padding: 20px;
     border-radius: 5px;
     .title {
