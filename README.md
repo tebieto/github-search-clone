@@ -15,16 +15,6 @@ search Github repositories and users, using their search parameters.
 - yarn install
 - yarn start
 
-- install npm, node and postgres locally
-- mkdir /server/src/uploads/csv
-- touch /server/.env
-- see .env.sample.dev for required environment variables
-- cd /server
-- RUN yarn dependencies
-- RUN yarn serve
-- This will run builds, tests and linters
-- if you do not want to make local installations, run in container instead
-
 ## Possible Improvements and Upgrades
 
 - No tests written
