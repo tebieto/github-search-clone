@@ -14,7 +14,7 @@ const Pagination = ({
   max,
   currentPage,
   setCurrentPage,
-}: PaginationProps): JSX.Element => {
+}: PaginationProps): JSX.Element | null => {
   const maxButtonLength = 4;
   const buttonLength = Math.ceil(itemsLength / max);
   const pageButtons = getPageButtons({
@@ -24,7 +24,7 @@ const Pagination = ({
   });
   const activatePrevious = currentPage > 0;
   const activateNext = currentPage < buttonLength - 1;
-  return (
+  return itemsLength ? (
     <PaginationContainer>
       <KeyboardArrowLeftIcon
         onClick={() => activatePrevious && setCurrentPage(currentPage - 1)}
@@ -67,7 +67,7 @@ const Pagination = ({
         className={`icon arrow-right ${activateNext && 'active-icon'}`}
       />
     </PaginationContainer>
-  );
+  ) : null;
 };
 
 export default Pagination;

@@ -14,6 +14,7 @@ export const ResultContainer = styled.div`
       h2 {
         margin: 0;
         margin-bottom: 30px;
+        min-width: 700px;
       }
     }
   }
