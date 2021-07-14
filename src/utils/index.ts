@@ -25,6 +25,5 @@ export const getPageButtons = ({
 
   const pageButtons = pages.slice(start, start + maxButtonLength);
 
-  console.log({ pages, start, pageButtons });
   return pageButtons;
 };
