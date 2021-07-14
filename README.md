@@ -18,7 +18,6 @@ search Github repositories and users, using their search parameters.
 ## Possible Improvements and Upgrades
 
 - No tests written
-- Incomplete pagination logic
 - UI could be better
 - More accessibility
 - Stricter code style

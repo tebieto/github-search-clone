@@ -6,7 +6,9 @@ export const PaginationContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  .pages {
+  .pages,
+  .prefix,
+  .suffix {
     display: flex;
     justify-content: center;
     .page {

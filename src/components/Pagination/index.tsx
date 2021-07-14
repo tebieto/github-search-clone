@@ -1,8 +1,8 @@
 import React from 'react';
-import { getPages } from '../../utils';
 import { PaginationContainer } from './styles';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+import { getPageButtons } from '../../utils';
 interface PaginationProps {
   itemsLength: number;
   currentPage: number;
@@ -15,9 +15,15 @@ const Pagination = ({
   currentPage,
   setCurrentPage,
 }: PaginationProps): JSX.Element => {
-  const pages = getPages(Math.ceil(itemsLength / max));
+  const maxButtonLength = 4;
+  const buttonLength = Math.ceil(itemsLength / max);
+  const pageButtons = getPageButtons({
+    buttonLength,
+    maxButtonLength,
+    currentPage,
+  });
   const activatePrevious = currentPage > 0;
-  const activateNext = currentPage < pages.length - 1;
+  const activateNext = currentPage < buttonLength - 1;
   return (
     <PaginationContainer>
       <KeyboardArrowLeftIcon
@@ -25,7 +31,15 @@ const Pagination = ({
         className={`icon arrow-left ${activatePrevious && 'active-icon'}`}
       />
       <div className="pages">
-        {pages.map((page: number) => {
+        {currentPage > 0 + maxButtonLength - 1 ? (
+          <div className="prefix">
+            <div onClick={() => setCurrentPage(0)} className="page">
+              {1}
+            </div>
+            <div className="page">...</div>
+          </div>
+        ) : null}
+        {pageButtons.map((page: number) => {
           return (
             <div
               onClick={() => setCurrentPage(page)}
@@ -36,6 +50,17 @@ const Pagination = ({
             </div>
           );
         })}
+        {pageButtons[pageButtons.length - 1] !== buttonLength - 1 ? (
+          <div className="suffix">
+            <div className="page">...</div>
+            <div
+              onClick={() => setCurrentPage(buttonLength - 1)}
+              className="page"
+            >
+              {buttonLength}
+            </div>
+          </div>
+        ) : null}
       </div>
       <KeyboardArrowRightIcon
         onClick={() => activateNext && setCurrentPage(currentPage + 1)}
