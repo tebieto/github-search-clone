@@ -29,5 +29,5 @@ export const getPageButtons = ({
 };
 
 export const getPageTitle = (title: string): string => {
-  return `Github Search - ${title}`;
+  return `Github Search | ${title}`;
 };

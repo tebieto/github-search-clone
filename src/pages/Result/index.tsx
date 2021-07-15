@@ -40,7 +40,7 @@ const Result = (): JSX.Element => {
 
   return (
     <ResultContainer>
-      <Title title={getPageTitle('Result')} />
+      <Title title={getPageTitle('Search Results')} />
       <Header query={query} />
       {userLoading || repositoryLoading ? (
         <Loader />

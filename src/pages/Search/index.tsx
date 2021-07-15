@@ -26,7 +26,7 @@ const Search = (): JSX.Element => {
 
   return (
     <SearchContainer>
-      <Title title={getPageTitle('Login')} />
+      <Title title={getPageTitle('Search')} />
       <div className="search-header">
         <HeaderProfileSection />
       </div>
