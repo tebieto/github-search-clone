@@ -2,31 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {
-  ApolloClient,
-  createHttpLink,
-  InMemoryCache,
-  ApolloProvider,
-} from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import { createTheme, ThemeProvider } from '@material-ui/core';
 import colors from './utils/colors';
-import { ACCESS_TOKEN_KEY } from './utils/constants';
-
-const link = createHttpLink({
-  uri: 'https://api.github.com/graphql',
-  headers: {
-    /**
-     *  Storing token in localStorage is bad practice
-     *  but I to do this to add access_token to authentication flow
-     * This could be avoided by storing access tokens as secured enviroinment variable
-     * */
-    Authorization: `bearer ${localStorage.getItem(ACCESS_TOKEN_KEY)}`,
-  },
-});
-const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  link,
-});
+import { client } from './graphql';
 
 const customTheme = createTheme({
   palette: {

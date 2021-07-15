@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<styled.div>
+  <ul
+    aria-label="sidenav"
+    className="nav"
+  >
+    <li
+      aria-label="repository result nav"
+      className="nav-item false"
+      onClick={[Function]}
+    >
+      <span>
+        Repository
+      </span>
+       
+      <span
+        className="record-count"
+      >
+        0
+      </span>
+    </li>
+    <li
+      aria-label="user result nav"
+      className="nav-item false"
+      onClick={[Function]}
+    >
+      <span>
+        User
+      </span>
+       
+      <span
+        className="record-count"
+      >
+        0
+      </span>
+    </li>
+  </ul>
+</styled.div>
+`;

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<styled.div>
+  <Memo(ForwardRef(KeyboardArrowLeftIcon))
+    className="icon arrow-left false"
+    onClick={[Function]}
+  />
+  <div
+    className="pages"
+  >
+    <div
+      className="page active"
+      key="0"
+      onClick={[Function]}
+    >
+      1
+    </div>
+    <div
+      className="page false"
+      key="1"
+      onClick={[Function]}
+    >
+      2
+    </div>
+    <div
+      className="page false"
+      key="2"
+      onClick={[Function]}
+    >
+      3
+    </div>
+    <div
+      className="page false"
+      key="3"
+      onClick={[Function]}
+    >
+      4
+    </div>
+    <div
+      className="suffix"
+    >
+      <div
+        className="page"
+      >
+        ...
+      </div>
+      <div
+        className="page"
+        onClick={[Function]}
+      >
+        10
+      </div>
+    </div>
+  </div>
+  <Memo(ForwardRef(KeyboardArrowRightIcon))
+    className="icon arrow-right active-icon"
+    onClick={[Function]}
+  />
+</styled.div>
+`;

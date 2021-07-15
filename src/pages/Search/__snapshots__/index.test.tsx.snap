@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<styled.div>
+  <Title
+    title="Github Search | Search"
+  />
+  <div
+    className="search-header"
+  >
+    <HeaderProfileSection />
+  </div>
+  <div
+    className="search-body"
+  >
+    <div
+      className="search-body-contents"
+    >
+      <Logo />
+      <div
+        className="search-input"
+      >
+        <CustomInput
+          aria-label="Search Input"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          value="react"
+        />
+      </div>
+      <CustomButton
+        aria-label="Search Github Button"
+        onClick={[Function]}
+      >
+        Search Github
+      </CustomButton>
+    </div>
+  </div>
+</styled.div>
+`;
