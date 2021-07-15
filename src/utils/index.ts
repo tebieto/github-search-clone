@@ -1,3 +1,6 @@
+import commaNumber from 'comma-number';
+import shortNumber from 'short-number';
+
 export const queryLink = (query: string): string => {
   return `/search/results/?q=${query}`;
 };
@@ -7,6 +10,7 @@ interface GetPageButtonProps {
   maxButtonLength: number;
   currentPage: number;
 }
+
 export const getPageButtons = ({
   buttonLength,
   maxButtonLength,
@@ -30,4 +34,12 @@ export const getPageButtons = ({
 
 export const getPageTitle = (title: string): string => {
   return `Github Search | ${title}`;
+};
+
+export const addCommaToNumber = (number: number): string => {
+  return commaNumber(number);
+};
+
+export const shortenNumber = (number: number): string => {
+  return shortNumber(number);
 };

@@ -9,12 +9,14 @@ export const postWithAxios = async (
   return axios.post(path, { ...otherProps }, {}).then((res) => res.data);
 };
 
-const post = (props: PostRequestProps) => {
+export const postRequest = (
+  props: PostRequestProps,
+): Promise<PostResponseProps> => {
   return postWithAxios(props);
 };
 
 export const authenticateUser = (
   authenticationCode: string,
 ): Promise<PostResponseProps> => {
-  return post({ path: AUTH_BASE_URL, code: authenticationCode });
+  return postRequest({ path: AUTH_BASE_URL, code: authenticationCode });
 };

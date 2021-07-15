@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResultTabContainer } from './styles';
-import shortenNumber from 'short-number';
+import { shortenNumber } from '../../utils/';
 interface ResultTabProps {
   active: string;
   setActive: { (active: string): void };

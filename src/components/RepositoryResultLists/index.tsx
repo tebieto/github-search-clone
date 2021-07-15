@@ -1,10 +1,9 @@
 import React from 'react';
 import { RepositoryResultListsContainer } from './styles';
 
-import shortenNumber from 'short-number';
 import TimeAgo from 'timeago-react';
-import commaNumber from 'comma-number';
 import Pagination from '../Pagination';
+import { addCommaToNumber, shortenNumber } from '../../utils';
 
 interface RepositoryNode {
   id: string;
@@ -37,7 +36,7 @@ const RepositoryResultLists = ({
 
   return (
     <RepositoryResultListsContainer>
-      <h2>{commaNumber(repository.length)} Repository Results</h2>
+      <h2>{addCommaToNumber(repository.length)} Repository Results</h2>
       {repository &&
         repository
           .slice(

@@ -1,7 +1,7 @@
 import React from 'react';
-import commaNumber from 'comma-number';
 import { UserResultListsContainer } from './styles';
 import Pagination from '../Pagination';
+import { addCommaToNumber } from '../../utils';
 interface UserNode {
   id: string;
   name: string;
@@ -16,10 +16,12 @@ const UserResultLists = ({ user }: UserResultListsProps): JSX.Element => {
   const handleSetCurrentPage = React.useCallback((page: number) => {
     setCurrentPage(page);
   }, []);
+
   const maxItemPerPage = 10;
+
   return (
     <UserResultListsContainer>
-      <h2>{commaNumber(user.length)} User Results</h2>
+      <h2>{addCommaToNumber(user.length)} User Results</h2>
       {user
         .slice(
           currentPage * maxItemPerPage,
