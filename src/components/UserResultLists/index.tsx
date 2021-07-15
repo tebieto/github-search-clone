@@ -16,12 +16,15 @@ const UserResultLists = ({ user }: UserResultListsProps): JSX.Element => {
   const handleSetCurrentPage = React.useCallback((page: number) => {
     setCurrentPage(page);
   }, []);
-  const max = 10;
+  const maxItemPerPage = 10;
   return (
     <UserResultListsContainer>
       <h2>{commaNumber(user.length)} User Results</h2>
       {user
-        .slice(currentPage * max, currentPage * max + max)
+        .slice(
+          currentPage * maxItemPerPage,
+          currentPage * maxItemPerPage + maxItemPerPage,
+        )
         .filter(({ id }: UserNode) => id)
         .map((user: UserNode, key: number) => {
           return (
@@ -38,7 +41,7 @@ const UserResultLists = ({ user }: UserResultListsProps): JSX.Element => {
         itemsLength={user.length}
         currentPage={currentPage}
         setCurrentPage={handleSetCurrentPage}
-        max={max}
+        maxItemPerPage={maxItemPerPage}
       />
     </UserResultListsContainer>
   );

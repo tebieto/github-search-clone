@@ -4,8 +4,8 @@ import shortenNumber from 'short-number';
 interface ResultTabProps {
   active: string;
   setActive: { (active: string): void };
-  users: [];
-  repositories: [];
+  users: unknown[];
+  repositories: unknown[];
 }
 const ResultTab = (props: ResultTabProps): JSX.Element => {
   const { active, setActive } = props;

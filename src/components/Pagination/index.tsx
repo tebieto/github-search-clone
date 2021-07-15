@@ -6,17 +6,17 @@ import { getPageButtons } from '../../utils';
 interface PaginationProps {
   itemsLength: number;
   currentPage: number;
-  max: number;
+  maxItemPerPage: number;
   setCurrentPage: { (page: number): void };
 }
 const Pagination = ({
   itemsLength,
-  max,
+  maxItemPerPage,
   currentPage,
   setCurrentPage,
 }: PaginationProps): JSX.Element | null => {
   const maxButtonLength = 4;
-  const buttonLength = Math.ceil(itemsLength / max);
+  const buttonLength = Math.ceil(itemsLength / maxItemPerPage);
   const pageButtons = getPageButtons({
     buttonLength,
     maxButtonLength,

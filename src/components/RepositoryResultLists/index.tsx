@@ -33,14 +33,17 @@ const RepositoryResultLists = ({
     setCurrentPage(page);
   }, []);
 
-  const max = 10;
+  const maxItemPerPage = 10;
 
   return (
     <RepositoryResultListsContainer>
       <h2>{commaNumber(repository.length)} Repository Results</h2>
       {repository &&
         repository
-          .slice(currentPage * max, currentPage * max + max)
+          .slice(
+            currentPage * maxItemPerPage,
+            currentPage * maxItemPerPage + maxItemPerPage,
+          )
           .filter(({ id }: RepositoryNode) => id)
           .map((repository: RepositoryNode, key: number) => {
             const language = repository.languages.nodes[0];
@@ -64,7 +67,7 @@ const RepositoryResultLists = ({
         itemsLength={repository.length}
         currentPage={currentPage}
         setCurrentPage={handleSetCurrentPage}
-        max={max}
+        maxItemPerPage={maxItemPerPage}
       />
     </RepositoryResultListsContainer>
   );
