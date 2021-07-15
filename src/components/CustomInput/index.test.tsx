@@ -1,9 +1,10 @@
 import React from 'react';
-import App from './App';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import CustomInput from '.';
 
 it('renders correctly', () => {
-  const tree = shallow(<App />);
+  const onChange = () => null;
+  const tree = shallow(<CustomInput value="Test" onChange={onChange} />);
   expect(toJson(tree)).toMatchSnapshot();
 });

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import {
@@ -47,13 +46,11 @@ const customTheme = createTheme({
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ApolloProvider client={client}>
-        <ThemeProvider theme={customTheme}>
-          <App />
-        </ThemeProvider>
-      </ApolloProvider>
-    </BrowserRouter>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={customTheme}>
+        <App />
+      </ThemeProvider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

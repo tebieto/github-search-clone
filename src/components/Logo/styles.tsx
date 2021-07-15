@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
   .logo-mark,
   .logo {
     height: 50px;

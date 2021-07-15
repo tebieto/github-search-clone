@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Styled(WithStyles(ForwardRef(TextField)))
+  InputProps={
+    Object {
+      "endAdornment": <WithStyles(ForwardRef(InputAdornment))
+        position="end"
+      >
+        <Memo />
+      </WithStyles(ForwardRef(InputAdornment))>,
+    }
+  }
+  fullWidth={true}
+  onChange={[Function]}
+  value="Test"
+  variant="outlined"
+/>
+`;

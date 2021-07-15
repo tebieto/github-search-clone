@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<styled.div>
+  <img
+    alt=""
+    className="logo-mark"
+    src="github-mark.png"
+  />
+  <img
+    alt=""
+    className="logo"
+    src="github-logo.png"
+  />
+</styled.div>
+`;

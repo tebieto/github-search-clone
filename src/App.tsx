@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import Loader from './components/Loader';
@@ -10,7 +11,7 @@ const Result = lazy(() => import('./pages/Result'));
 function App(): JSX.Element {
   const isLoggedIn = localStorage.getItem(ACCESS_TOKEN_KEY);
   return (
-    <div>
+    <BrowserRouter>
       <Switch>
         <ErrorBoundary>
           <Suspense fallback={<Loader />}>
@@ -34,7 +35,7 @@ function App(): JSX.Element {
           </Suspense>
         </ErrorBoundary>
       </Switch>
-    </div>
+    </BrowserRouter>
   );
 }
 

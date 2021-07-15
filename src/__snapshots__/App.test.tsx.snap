@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<BrowserRouter>
+  <Switch>
+    <ErrorBoundary>
+      <Suspense
+        fallback={<Loader />}
+      >
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/search"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/search/results"
+          render={[Function]}
+        />
+      </Suspense>
+    </ErrorBoundary>
+  </Switch>
+</BrowserRouter>
+`;
