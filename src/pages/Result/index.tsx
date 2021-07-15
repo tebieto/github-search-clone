@@ -10,6 +10,8 @@ import { useHistory } from 'react-router';
 import { useQuery } from '@apollo/client';
 import { SEARCH_REPOSITORY, SEARCH_USER } from '../../graphql/mutation';
 import Loader from '../../components/Loader';
+import Title from '../../components/Title';
+import { getPageTitle } from '../../utils';
 
 const Result = (): JSX.Element => {
   const [active, setActive] = React.useState('repository');
@@ -38,6 +40,7 @@ const Result = (): JSX.Element => {
 
   return (
     <ResultContainer>
+      <Title title={getPageTitle('Result')} />
       <Header query={query} />
       {userLoading || repositoryLoading ? (
         <Loader />

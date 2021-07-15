@@ -4,7 +4,8 @@ import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 import HeaderProfileSection from '../../components/HeaderProfileSection';
 import Logo from '../../components/Logo';
-import { queryLink } from '../../utils';
+import Title from '../../components/Title';
+import { getPageTitle, queryLink } from '../../utils';
 import { SearchContainer } from './styles';
 
 const Search = (): JSX.Element => {
@@ -25,6 +26,7 @@ const Search = (): JSX.Element => {
 
   return (
     <SearchContainer>
+      <Title title={getPageTitle('Login')} />
       <div className="search-header">
         <HeaderProfileSection />
       </div>

@@ -9,15 +9,19 @@ search Github repositories and users, using their search parameters.
 
 - Language: TypeScript
 - Frontend: React
+- Test: Jest and Enzyme
 
 ## Run Locally
 
 - yarn install
 - yarn start
 
+## Run Tests
+
+- yarn test
+
 ## Possible Improvements and Upgrades
 
-- No tests written
 - UI could be better
 - More accessibility
 - Stricter code style
