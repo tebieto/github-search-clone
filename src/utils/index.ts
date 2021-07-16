@@ -1,8 +1,9 @@
 import commaNumber from 'comma-number';
 import shortNumber from 'short-number';
+import { PAGES } from './constants';
 
 export const queryLink = (query: string): string => {
-  return `/search/results/?q=${query}`;
+  return `${PAGES.results}?q=${query}`;
 };
 
 interface GetPageButtonProps {

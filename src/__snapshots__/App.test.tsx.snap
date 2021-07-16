@@ -1,29 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
-<BrowserRouter>
-  <Switch>
-    <ErrorBoundary>
-      <Suspense
-        fallback={<Loader />}
-      >
-        <Route
-          exact={true}
-          path="/"
-          render={[Function]}
-        />
-        <Route
-          exact={true}
-          path="/search"
-          render={[Function]}
-        />
-        <Route
-          exact={true}
-          path="/search/results"
-          render={[Function]}
-        />
-      </Suspense>
-    </ErrorBoundary>
-  </Switch>
-</BrowserRouter>
+exports[`App renders correctly 1`] = `
+<App>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Switch>
+        <ErrorBoundary
+          computedMatch={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            }
+          }
+        >
+          <Suspense
+            fallback={<Loader />}
+          >
+            <Route
+              exact={true}
+              path="/"
+              render={[Function]}
+            />
+            <Loader>
+              <styled.div>
+                <div
+                  className="sc-hKFxyN llegoJ"
+                >
+                  <img
+                    alt=""
+                    src="loader.svg"
+                  />
+                </div>
+              </styled.div>
+            </Loader>
+          </Suspense>
+        </ErrorBoundary>
+      </Switch>
+    </Router>
+  </BrowserRouter>
+</App>
 `;

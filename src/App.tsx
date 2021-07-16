@@ -4,33 +4,39 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import Loader from './components/Loader';
-import { ACCESS_TOKEN_KEY } from './utils/constants';
+import { isLoggedIn } from './utils/auth';
+import { PAGES } from './utils/constants';
 const Login = lazy(() => import('./pages/Login'));
 const Search = lazy(() => import('./pages/Search'));
 const Result = lazy(() => import('./pages/Result'));
+
 function App(): JSX.Element {
-  const isLoggedIn = localStorage.getItem(ACCESS_TOKEN_KEY);
+  const IS_LOGGED_IN = isLoggedIn();
   return (
     <BrowserRouter>
       <Switch>
         <ErrorBoundary>
           <Suspense fallback={<Loader />}>
             <Route
-              path={'/'}
+              path={PAGES.login}
               exact
               render={() =>
-                isLoggedIn ? <Redirect to="/search" /> : <Login />
+                IS_LOGGED_IN ? <Redirect to={PAGES.search} /> : <Login />
               }
             />
             <Route
-              path={'/search'}
+              path={PAGES.search}
               exact
-              render={() => (isLoggedIn ? <Search /> : <Redirect to="/" />)}
+              render={() =>
+                IS_LOGGED_IN ? <Search /> : <Redirect to={PAGES.login} />
+              }
             />
             <Route
-              path={'/search/results'}
+              path={PAGES.results}
               exact
-              render={() => (isLoggedIn ? <Result /> : <Redirect to="/" />)}
+              render={() =>
+                IS_LOGGED_IN ? <Result /> : <Redirect to={PAGES.login} />
+              }
             />
           </Suspense>
         </ErrorBoundary>
