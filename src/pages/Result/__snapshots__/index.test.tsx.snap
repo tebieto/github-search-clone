@@ -18654,7 +18654,7 @@ exports[`renders correctly 1`] = `
       <Result>
         <styled.div>
           <div
-            className="sc-pNWdM jTjaaA"
+            className="sc-pNWdM egA-DhK"
           >
             <Title
               title="Github Search | Search Results"
@@ -18668,13 +18668,13 @@ exports[`renders correctly 1`] = `
                 position="static"
               >
                 <WithStyles(ForwardRef(AppBar))
-                  className="sc-hKFxyN enfmb"
+                  className="sc-hKFxyN fBdHun"
                   color="secondary"
                   elevation={1}
                   position="static"
                 >
                   <ForwardRef(AppBar)
-                    className="sc-hKFxyN enfmb"
+                    className="sc-hKFxyN fBdHun"
                     classes={
                       Object {
                         "colorDefault": "MuiAppBar-colorDefault",
@@ -18695,13 +18695,13 @@ exports[`renders correctly 1`] = `
                     position="static"
                   >
                     <WithStyles(ForwardRef(Paper))
-                      className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorSecondary sc-hKFxyN enfmb"
+                      className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorSecondary sc-hKFxyN fBdHun"
                       component="header"
                       elevation={1}
                       square={true}
                     >
                       <ForwardRef(Paper)
-                        className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorSecondary sc-hKFxyN enfmb"
+                        className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorSecondary sc-hKFxyN fBdHun"
                         classes={
                           Object {
                             "elevation0": "MuiPaper-elevation0",
@@ -18739,7 +18739,7 @@ exports[`renders correctly 1`] = `
                         square={true}
                       >
                         <header
-                          className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorSecondary sc-hKFxyN enfmb MuiPaper-elevation1"
+                          className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorSecondary sc-hKFxyN fBdHun MuiPaper-elevation1"
                         >
                           <Styled(WithStyles(ForwardRef(Toolbar)))>
                             <WithStyles(ForwardRef(Toolbar))
@@ -18762,18 +18762,23 @@ exports[`renders correctly 1`] = `
                                   <Logo>
                                     <styled.div>
                                       <div
-                                        className="sc-dlnjwi gMJpWl"
+                                        className="sc-dlnjwi irSRhD"
                                       >
-                                        <img
-                                          alt=""
-                                          className="logo-mark"
-                                          src="github-mark.png"
-                                        />
-                                        <img
-                                          alt=""
-                                          className="logo"
-                                          src="github-logo.png"
-                                        />
+                                        <div
+                                          className="wrapper"
+                                          onClick={[Function]}
+                                        >
+                                          <img
+                                            alt=""
+                                            className="logo-mark"
+                                            src="github-mark.png"
+                                          />
+                                          <img
+                                            alt=""
+                                            className="logo"
+                                            src="github-logo.png"
+                                          />
+                                        </div>
                                       </div>
                                     </styled.div>
                                   </Logo>
@@ -18781,6 +18786,7 @@ exports[`renders correctly 1`] = `
                                     className="search-input-container"
                                   >
                                     <CustomInput
+                                      handleIconClick={[Function]}
                                       onChange={[Function]}
                                       onKeyDown={[Function]}
                                       placeholder="Search"
@@ -18793,11 +18799,15 @@ exports[`renders correctly 1`] = `
                                             "endAdornment": <WithStyles(ForwardRef(InputAdornment))
                                               position="end"
                                             >
-                                              <Memo />
+                                              <Memo
+                                                className="icon"
+                                                onClick={[Function]}
+                                              />
                                             </WithStyles(ForwardRef(InputAdornment))>,
                                           }
                                         }
                                         fullWidth={true}
+                                        handleIconClick={[Function]}
                                         onChange={[Function]}
                                         onKeyDown={[Function]}
                                         placeholder="Search"
@@ -18811,12 +18821,16 @@ exports[`renders correctly 1`] = `
                                               "endAdornment": <WithStyles(ForwardRef(InputAdornment))
                                                 position="end"
                                               >
-                                                <Memo />
+                                                <Memo
+                                                  className="icon"
+                                                  onClick={[Function]}
+                                                />
                                               </WithStyles(ForwardRef(InputAdornment))>,
                                             }
                                           }
-                                          className="sc-bdnxRM cPrxci"
+                                          className="sc-bdnxRM fexIob"
                                           fullWidth={true}
+                                          handleIconClick={[Function]}
                                           onChange={[Function]}
                                           onKeyDown={[Function]}
                                           placeholder="Search"
@@ -18830,17 +18844,21 @@ exports[`renders correctly 1`] = `
                                                 "endAdornment": <WithStyles(ForwardRef(InputAdornment))
                                                   position="end"
                                                 >
-                                                  <Memo />
+                                                  <Memo
+                                                    className="icon"
+                                                    onClick={[Function]}
+                                                  />
                                                 </WithStyles(ForwardRef(InputAdornment))>,
                                               }
                                             }
-                                            className="sc-bdnxRM cPrxci"
+                                            className="sc-bdnxRM fexIob"
                                             classes={
                                               Object {
                                                 "root": "MuiTextField-root",
                                               }
                                             }
                                             fullWidth={true}
+                                            handleIconClick={[Function]}
                                             onChange={[Function]}
                                             onKeyDown={[Function]}
                                             placeholder="Search"
@@ -18849,18 +18867,19 @@ exports[`renders correctly 1`] = `
                                             variant="outlined"
                                           >
                                             <WithStyles(ForwardRef(FormControl))
-                                              className="MuiTextField-root sc-bdnxRM cPrxci"
+                                              className="MuiTextField-root sc-bdnxRM fexIob"
                                               color="primary"
                                               disabled={false}
                                               error={false}
                                               fullWidth={true}
+                                              handleIconClick={[Function]}
                                               onKeyDown={[Function]}
                                               required={false}
                                               size="small"
                                               variant="outlined"
                                             >
                                               <ForwardRef(FormControl)
-                                                className="MuiTextField-root sc-bdnxRM cPrxci"
+                                                className="MuiTextField-root sc-bdnxRM fexIob"
                                                 classes={
                                                   Object {
                                                     "fullWidth": "MuiFormControl-fullWidth",
@@ -18873,13 +18892,15 @@ exports[`renders correctly 1`] = `
                                                 disabled={false}
                                                 error={false}
                                                 fullWidth={true}
+                                                handleIconClick={[Function]}
                                                 onKeyDown={[Function]}
                                                 required={false}
                                                 size="small"
                                                 variant="outlined"
                                               >
                                                 <div
-                                                  className="MuiFormControl-root MuiTextField-root sc-bdnxRM cPrxci MuiFormControl-fullWidth"
+                                                  className="MuiFormControl-root MuiTextField-root sc-bdnxRM fexIob MuiFormControl-fullWidth"
+                                                  handleIconClick={[Function]}
                                                   onKeyDown={[Function]}
                                                 >
                                                   <WithStyles(ForwardRef(OutlinedInput))
@@ -18888,7 +18909,10 @@ exports[`renders correctly 1`] = `
                                                       <WithStyles(ForwardRef(InputAdornment))
                                                         position="end"
                                                       >
-                                                        <Memo />
+                                                        <Memo
+                                                          className="icon"
+                                                          onClick={[Function]}
+                                                        />
                                                       </WithStyles(ForwardRef(InputAdornment))>
                                                     }
                                                     fullWidth={true}
@@ -18922,7 +18946,10 @@ exports[`renders correctly 1`] = `
                                                         <WithStyles(ForwardRef(InputAdornment))
                                                           position="end"
                                                         >
-                                                          <Memo />
+                                                          <Memo
+                                                            className="icon"
+                                                            onClick={[Function]}
+                                                          />
                                                         </WithStyles(ForwardRef(InputAdornment))>
                                                       }
                                                       fullWidth={true}
@@ -18956,7 +18983,10 @@ exports[`renders correctly 1`] = `
                                                           <WithStyles(ForwardRef(InputAdornment))
                                                             position="end"
                                                           >
-                                                            <Memo />
+                                                            <Memo
+                                                              className="icon"
+                                                              onClick={[Function]}
+                                                            />
                                                           </WithStyles(ForwardRef(InputAdornment))>
                                                         }
                                                         fullWidth={true}
@@ -18996,7 +19026,10 @@ exports[`renders correctly 1`] = `
                                                             <WithStyles(ForwardRef(InputAdornment))
                                                               position="end"
                                                             >
-                                                              <Memo />
+                                                              <Memo
+                                                                className="icon"
+                                                                onClick={[Function]}
+                                                              />
                                                             </WithStyles(ForwardRef(InputAdornment))>
                                                           }
                                                           fullWidth={true}
@@ -19046,9 +19079,16 @@ exports[`renders correctly 1`] = `
                                                                 <div
                                                                   className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-marginDense"
                                                                 >
-                                                                  <ForwardRef(SearchIcon)>
-                                                                    <WithStyles(ForwardRef(SvgIcon))>
+                                                                  <ForwardRef(SearchIcon)
+                                                                    className="icon"
+                                                                    onClick={[Function]}
+                                                                  >
+                                                                    <WithStyles(ForwardRef(SvgIcon))
+                                                                      className="icon"
+                                                                      onClick={[Function]}
+                                                                    >
                                                                       <ForwardRef(SvgIcon)
+                                                                        className="icon"
                                                                         classes={
                                                                           Object {
                                                                             "colorAction": "MuiSvgIcon-colorAction",
@@ -19062,11 +19102,13 @@ exports[`renders correctly 1`] = `
                                                                             "root": "MuiSvgIcon-root",
                                                                           }
                                                                         }
+                                                                        onClick={[Function]}
                                                                       >
                                                                         <svg
                                                                           aria-hidden={true}
-                                                                          className="MuiSvgIcon-root"
+                                                                          className="MuiSvgIcon-root icon"
                                                                           focusable="false"
+                                                                          onClick={[Function]}
                                                                           viewBox="0 0 24 24"
                                                                         >
                                                                           <path
@@ -19141,7 +19183,7 @@ exports[`renders correctly 1`] = `
                                   <HeaderProfileSection>
                                     <styled.div>
                                       <div
-                                        className="sc-gtsrHT haHQhR"
+                                        className="sc-gtsrHT gCUCYp"
                                       >
                                         <img
                                           alt=""

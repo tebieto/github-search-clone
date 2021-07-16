@@ -7,7 +7,9 @@ exports[`renders correctly 1`] = `
       "endAdornment": <WithStyles(ForwardRef(InputAdornment))
         position="end"
       >
-        <Memo />
+        <Memo
+          className="icon"
+        />
       </WithStyles(ForwardRef(InputAdornment))>,
     }
   }

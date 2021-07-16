@@ -12,6 +12,7 @@ exports[`renders correctly 1`] = `
       className="search-input-container"
     >
       <CustomInput
+        handleIconClick={[Function]}
         onChange={[Function]}
         onKeyDown={[Function]}
         placeholder="Search"

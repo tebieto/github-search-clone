@@ -2,15 +2,20 @@
 
 exports[`renders correctly 1`] = `
 <styled.div>
-  <img
-    alt=""
-    className="logo-mark"
-    src="github-mark.png"
-  />
-  <img
-    alt=""
-    className="logo"
-    src="github-logo.png"
-  />
+  <div
+    className="wrapper"
+    onClick={[Function]}
+  >
+    <img
+      alt=""
+      className="logo-mark"
+      src="github-mark.png"
+    />
+    <img
+      alt=""
+      className="logo"
+      src="github-logo.png"
+    />
+  </div>
 </styled.div>
 `;
