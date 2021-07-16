@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Menu, MenuItem } from '@material-ui/core';
 import colors from '../../utils/colors';
@@ -6,15 +6,18 @@ import { ACCESS_TOKEN_KEY } from '../../utils/constants';
 const CustomMenu = (): JSX.Element => {
   const target = document.getElementById('null');
   const [anchorEl, setAnchorEl] = React.useState(target);
-  const handleClick = useCallback((e: React.SyntheticEvent<HTMLElement>) => {
-    setAnchorEl(e.currentTarget);
-  }, []);
+  const handleClick = React.useCallback(
+    (e: React.SyntheticEvent<HTMLElement>) => {
+      setAnchorEl(e.currentTarget);
+    },
+    [],
+  );
 
-  const handleClose = useCallback(() => {
+  const handleClose = React.useCallback(() => {
     setAnchorEl(null);
   }, []);
 
-  const handleLogout = useCallback(() => {
+  const handleLogout = React.useCallback(() => {
     localStorage.removeItem(ACCESS_TOKEN_KEY);
     handleClose();
     window.location.reload();

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
 import { queryLink } from '../../utils';
 import CustomInput from '../CustomInput';
@@ -7,7 +7,7 @@ import Logo from '../Logo';
 import { HeaderContainer, ToolbarContainer } from './styles';
 
 const Header = ({ query }: { query: string }): JSX.Element => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = React.useState('');
 
   const history = useHistory();
 
@@ -24,7 +24,7 @@ const Header = ({ query }: { query: string }): JSX.Element => {
     [inputValue],
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     setInputValue(query);
   }, [query]);
   return (
