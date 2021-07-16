@@ -7,6 +7,7 @@ interface CustomInputProps {
   placeholder?: string;
   value: string;
   size?: 'small' | 'medium' | undefined;
+  handleIconClick?: { (): void };
   onKeyDown?: { (e: React.KeyboardEvent<HTMLDivElement>): void };
 }
 
@@ -18,7 +19,7 @@ const CustomInput = (props: CustomInputProps): JSX.Element => {
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <SearchIcon />
+            <SearchIcon className="icon" onClick={props.handleIconClick} />
           </InputAdornment>
         ),
       }}

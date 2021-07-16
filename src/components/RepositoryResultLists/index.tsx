@@ -3,7 +3,11 @@ import { RepositoryResultListsContainer } from './styles';
 
 import TimeAgo from 'timeago-react';
 import Pagination from '../Pagination';
-import { addCommaToNumber, shortenNumber } from '../../utils';
+import {
+  addCommaToNumber,
+  customScrollToTop,
+  shortenNumber,
+} from '../../utils';
 
 interface RepositoryNode {
   id: string;
@@ -31,6 +35,10 @@ const RepositoryResultLists = ({
   const handleSetCurrentPage = React.useCallback((page: number) => {
     setCurrentPage(page);
   }, []);
+
+  React.useEffect(() => {
+    customScrollToTop();
+  }, [currentPage]);
 
   const maxItemPerPage = 10;
 

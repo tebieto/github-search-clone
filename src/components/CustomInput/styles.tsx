@@ -5,4 +5,7 @@ export const CustomInputContainer = styled(TextField)`
   fieldset {
     border-radius: 25px;
   }
+  .icon {
+    cursor: pointer;
+  }
 `;

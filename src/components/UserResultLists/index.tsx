@@ -1,7 +1,7 @@
 import React from 'react';
 import { UserResultListsContainer } from './styles';
 import Pagination from '../Pagination';
-import { addCommaToNumber } from '../../utils';
+import { addCommaToNumber, customScrollToTop } from '../../utils';
 interface UserNode {
   id: string;
   name: string;
@@ -16,6 +16,10 @@ const UserResultLists = ({ user }: UserResultListsProps): JSX.Element => {
   const handleSetCurrentPage = React.useCallback((page: number) => {
     setCurrentPage(page);
   }, []);
+
+  React.useEffect(() => {
+    customScrollToTop();
+  }, [currentPage]);
 
   const maxItemPerPage = 10;
 

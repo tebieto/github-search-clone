@@ -24,6 +24,10 @@ const Header = ({ query }: { query: string }): JSX.Element => {
     [inputValue],
   );
 
+  const handleIconClick = React.useCallback(() => {
+    history.push(queryLink(inputValue));
+  }, [inputValue]);
+
   React.useEffect(() => {
     setInputValue(query);
   }, [query]);
@@ -38,6 +42,7 @@ const Header = ({ query }: { query: string }): JSX.Element => {
             onChange={handleChange}
             size="small"
             onKeyDown={handleKeyDown}
+            handleIconClick={handleIconClick}
           />
         </div>
         <HeaderProfileSection />

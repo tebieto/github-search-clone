@@ -4,6 +4,7 @@ export const AUTH_BASE_URL =
 export const ACCESS_TOKEN_KEY = 'DONT_TRY_THIS_AT_HOME';
 
 export const PAGES = {
+  home: '/',
   login: '/',
   search: '/search',
   results: '/search/results',

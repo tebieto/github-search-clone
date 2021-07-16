@@ -44,3 +44,7 @@ export const addCommaToNumber = (number: number): string => {
 export const shortenNumber = (number: number): string => {
   return shortNumber(number);
 };
+
+export const customScrollToTop = (): void => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
