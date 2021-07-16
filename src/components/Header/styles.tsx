@@ -4,6 +4,10 @@ import styled from 'styled-components';
 export const HeaderContainer = styled(AppBar)`
   display: flex !important;
   padding: 15px 200px;
+  @media screen and (max-width: 800px) {
+    padding: 15px 10px;
+    justify-content: space-between;
+  }
   .search-input-container {
     width: 400px;
   }

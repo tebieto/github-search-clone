@@ -4,10 +4,12 @@ export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  .logo-mark,
   .logo {
     height: 50px;
-    width: auto;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
   .logo-mark {
     height: 60px;

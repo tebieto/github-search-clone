@@ -8,6 +8,10 @@ export const HeaderProfileSectionContainer = styled.div`
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
 
   .auth-user-name {

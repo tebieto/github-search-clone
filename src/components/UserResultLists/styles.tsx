@@ -5,9 +5,15 @@ export const UserResultListsContainer = styled.div`
   .user-result-list {
     background-color: ${colors.secondaryColor};
     display: inline-block;
-    width: 700px;
+    min-width: 700px;
     padding: 20px;
     border-radius: 5px;
+    @media screen and (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      margin: 20px;
+    }
     .title {
       display: flex;
       align-items: center;
