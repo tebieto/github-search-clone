@@ -6,6 +6,9 @@ export const SearchContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
     margin: 20px 200px;
+    @media screen and (max-width: 800px) {
+      margin: 20px;
+    }
   }
   .search-body {
     display: flex;
@@ -22,6 +25,7 @@ export const SearchContainer = styled.div`
       .search-input {
         width: 600px;
         margin: 30px 0;
+        max-width: 90vw;
       }
     }
   }
