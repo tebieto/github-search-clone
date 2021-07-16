@@ -22,6 +22,5 @@ search Github repositories and users, using their search parameters.
 
 ## Possible Improvements and Upgrades
 
-- UI could be better
-- More accessibility
-- Stricter code style
+- Server Side Rendering
+- More Tests
